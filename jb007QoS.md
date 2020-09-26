@@ -45,10 +45,6 @@ struct rectDef_s
 };
 ```
 
-| Call of Duty's |
-| ----------- |
-| None Uploaded Yet |
-
 | Hook      | Offsets | Args |
 | ----------- | ----------- | ---|
 | Menu_PaintAll | 0x822D90C8 | UiContext* dc, menuDef* menu | 
