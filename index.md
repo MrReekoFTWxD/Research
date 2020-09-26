@@ -14,11 +14,11 @@ Discord MrReeko#3989
 
 | Modified Call of Duty Engine |
 | ----------- |
-| [JB 007: QoS](https://mrreekoftwxd.github.io/Research/jb007QoS)| 
+| [JB 007: QoS](https://mrreekoftwxd.github.io/Research/jb007QoS) Xbox 360| 
 
 | idTech 4 |
 | ----------- |
-| Brink upload Soon | 
+| Brink upload Soon - Steam | 
 
 
 
