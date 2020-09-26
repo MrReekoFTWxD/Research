@@ -1,0 +1,365 @@
+
+<link rel="stylesheet" href="style.css">
+<h1>   &#8193James Bond 007 Quantum of Solace</h1>
+<body>   &#8193&#8193&#8193 TitleID - 41560829</body>
+<blockquote>
+ 
+  </blockquote>
+  <table>
+  <thead>
+  <tr>
+  <th>Rendering Functions</th>
+  <th>Offsets</th>
+  <th>Args</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr>
+  <td>R_AddCmdDrawPic</td>
+  <td>0x821AEDC0</td>
+  <td>float x, float y, float w, float h, float s0, float t0, float s1, float t1, const float* color, Material* material</td>
+  </tr>
+  <tr>
+  <td>Material_RegisterHandle</td>
+  <td>0x82565398</td>
+  <td>const char* name, int img</td>
+  </tr>
+  <tr>
+  <td>R_RegisterFont</td>
+  <td>0x821BD4F0</td>
+  <td>const char* name, int img</td>
+  </tr>
+  <tr>
+  <td>R_AddCmdDrawText</td>
+  <td>0x82572438</td>
+  <td>const char *text, int maxChars, Font *font, float x, float y, float xScale, float yScale, float rotation, const float *color, int style</td>
+  </tr>
+  <tr>
+  <td>R_TextWidth</td>
+  <td>0x82564C58</td>
+  <td>const char* text, int maxchar, Font* font</td>
+  </tr>
+  <tr>
+  <td>R_TextHeight</td>
+  <td>0x82564D48</td>
+  <td>Font *font</td>
+  </tr>
+  </tbody>
+  </table>
+ 
+  </code></pre>
+  </blockquote>
+  <table>
+  <thead>
+  <tr>
+  <th>Random Functions</th>
+  <th>Offsets</th>
+  <th>Args</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr>
+  <td>Cbuf_AddText</td>
+  <td>0x82298750</td>
+  <td>int local, char* cmd</td>
+  </tr>
+  <tr>
+  <td>SL_GetString</td>
+  <td>0x822AF3B0</td>
+  <td>const char* str, int localController</td>
+  </tr>
+  <tr>
+  <td>AimTarget_GetTagPos</td>
+  <td>0x821261D0</td>
+  <td>int local, centity_t const* cen, unsigned int, vec3_t &amp;out</td>
+  </tr>
+  <tr>
+  <td>CG_CompassDrawPlayerMap</td>
+  <td>0x8216D060</td>
+  <td>int localClientNum, CompassType compassType, rectDef_s *parentRect, rectDef_s *rect, Material *material, const float *color</td>
+  </tr>
+  <tr>
+  <td>CG_CompassDrawPlayer</td>
+  <td>0x8216D568</td>
+  <td>int localClientNum, CompassType compassType, rectDef_s *parentRect, rectDef_s *rect, Material *material, const float *color &#8193&#8193&#8193&#8193&#8193&#8193</td>
+  </tr>
+  </tbody>
+  </table>
+
+  <table>
+    <thead>
+    <tr>
+    <th>Hook</th>
+    <th>Offsets</th>
+    <th>Args</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+    <td>Menu_PaintAll</td>
+    <td>0x822D90C8 </td>
+    <td>UiContext* dc, menuDef* menu &#8193&#8193&#8193&#8193&#8193&#8193&#8193&#8193&#8193&#8193&#8193&#8193&#8193&#8193&#8193&#8193&#8193&#8193&#8193&#8193&#8193&#8193&#8193&#8193&#8193&#8193&#8193&#8193&#8193</td>
+    </tr>
+    </tbody>
+  </table>
+
+  <table>
+    <thead>
+    <tr>
+    <th>Pointer</th>
+    <th>Offsets</th>
+    <th>Size</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+    <td>UiContext</td>
+    <td>0x83725CD0 </td>
+    <td>0x6E5C</td>
+    </tr>
+    <tr>
+    <td>ScrPlace</td>
+    <td>0x828A1708 </td>
+    <td>0xBC</td>
+    </tr>
+    <tr>
+    <td>cg_entityArray</td>
+    <td>0x82673F80 </td>
+    <td>0x1EC</td>
+    </tr>
+    <tr>
+    <td>cg_t</td>
+    <td>0x82770180 </td>
+    <td>FUCKING HUGE &#8193&#8193&#8193&#8193&#8193&#8193&#8193&#8193&#8193&#8193&#8193&#8193&#8193&#8193&#8193&#8193&#8193&#8193&#8193&#8193&#8193&#8193&#8193&#8193&#8193&#8193&#8193&#8193&#8193&#8193&#8193&#8193&#8193&#8193&#8193&#8193&#8193&#8193&#8193&#8193&#8193&#8193</td>
+    </tr>
+    </tbody>
+  </table>
+  <blockquote>
+    <p>Rendering Structs</p>
+    <pre><code class="lang-cpp"><span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">Material</span></span>
+    {
+        <span class="hljs-keyword">const</span> <span class="hljs-keyword">char</span>* name;
+    }
+    <span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">Font</span></span>
+    {
+        <span class="hljs-keyword">const</span> <span class="hljs-keyword">char</span>* name;
+        <span class="hljs-keyword">int</span> pixelHeight;
+    };
+  </code>
+</blockquote>
+<blockquote>
+  <p>Compass Structs</p>
+  <pre>
+    <code class="lang-cpp"><span class="hljs-class"><span class="hljs-keyword">enum</span> <span class="hljs-title">CompassType</span></span>
+      {
+        <span class="hljs-keyword">COMPASS_TYPE_PARTIAL,</span>
+        <span class="hljs-keyword">COMPASS_TYPE_FULL,</span>
+    };
+    <code class="lang-cpp"><span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">rectDef_s</span></span>
+      {
+        <span class="hljs-keyword">float</span> x, y, w, h;
+        <span class="hljs-keyword">int</span> horzAlign, vertAlign;
+    };
+</code>
+</code>
+</blockquote>
+  
+<blockquote>
+  <p>UiContext</p>
+  <pre>
+    <code class="lang-cpp"><span class="hljs-class"><span class="hljs-keyword">enum</span> UIContextIndex_t : DWORD
+      {
+        <span class="hljs-keyword">INVALID_UI_CONTEXT = 0xFFFFFFFF,</span>
+        <span class="hljs-keyword">UI_CONTEXT_FRONTEND = 0x0,</span>
+        <span class="hljs-keyword">UI_CONTEXT_INDEX_0 = 0x0,</span>
+        <span class="hljs-keyword">UI_CONTEXT_COUNT = 0x1,</span>
+    };
+    <code class="lang-cpp"><span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">UiContext</span></span>
+      {
+        <span class="hljs-keyword">UIContextIndex_t</span> contextIndex; //0x0000 
+        <span class="hljs-keyword">float</span> bias; //0x0004 
+        <span class="hljs-keyword">int</span> realTime; //0x0008 
+        <span class="hljs-keyword">int</span> frameTime; //0x000C 
+        <span class="hljs-keyword">float</span> cursorX; //0x0010 
+        <span class="hljs-keyword">float</span> cursorY; //0x0014
+        <span class="hljs-keyword">int</span> isCursorVisible; //0x0018 
+        <span class="hljs-keyword">int</span> screenWidth; //0x001C 
+        <span class="hljs-keyword">int</span> screenHeight; //0x0020 
+        <span class="hljs-keyword">float</span> screenAspect; //0x0024 
+        <span class="hljs-keyword">float</span> FPS; //0x0028 
+        <span class="hljs-keyword">float</span> blurRadiusOut; //0x002C 
+
+    };
+</code>
+</code>
+</blockquote>
+
+<blockquote>
+  <p>cg_t</p>
+  <pre>
+    <code class="lang-cpp"><span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">refdef_t</span></span>
+      {
+        <span class="hljs-keyword">int</span> x; //0x0000 
+        <span class="hljs-keyword">int</span> y; //0x0004 
+        <span class="hljs-keyword">int</span> width; //0x0008 
+        <span class="hljs-keyword">int</span> height; //0x000C 
+        <span class="hljs-keyword">float</span> tanHalfFovX; //0x0010 
+        <span class="hljs-keyword">float</span> tanHalfFovY; //0x0014
+        <span class="hljs-keyword">char</span> _0x18[0x30]; //0x0018 
+        <span class="hljs-keyword">vec3_t</span> eyePos; //0x0048 
+        <span class="hljs-keyword">vec3_t</span> eyePosOld; //0x0054 
+        <span class="hljs-keyword">vec3_t</span> viewAxis[3]; //0x0060 
+    };
+
+    <span class="hljs-keyword">struct</span> <span class="hljs-keyword">cg_t</span>
+    {
+      <span class="hljs-keyword">char</span> _0x00[0x1E34C]; //0x0000 
+      <span class="hljs-keyword">refdef_t</span> refdef; //0x1E34C 
+    };
+
+    
+
+</code>
+</code>
+</blockquote>
+  
+
+<blockquote>
+  <p>centity_t</p>
+  <pre>
+    <span class="hljs-keyword">enum</span> entityTypes {
+      ET_GENERAL,
+      ET_PLAYER,
+      ET_PLAYER_SHADOW,
+      ET_ITEM,
+      ET_MISSILE,
+      ET_INVISIBLE,
+      ET_SCRIPTMOVER,
+      ET_SOUND_BLEND,
+      ET_FX,
+      ET_LOOP_FX,
+      ET_PRIMARY_LIGHT,
+      ET_MG42,
+      ET_ACTOR,
+      ET_ACTOR_SPAWNER,
+      ET_ACTOR_CORPSE,
+      ET_VEHICLE, //enemys are cg_entities[i].eType = 0xF ??? idk why maybe using wrong etype but worked for me
+      ET_VEHICLE_CORPSE,
+      ET_VEHICLE_COLLMAP,
+      ET_INTERACTABLE,
+      ET_DOOR,
+      ET_ZONE_EMITTER,
+      ET_TRIGGER,
+    };
+
+    <span class="hljs-keyword">struct</span> centity_t
+    {
+      char _0x00[0x2]; //0x0000
+      unsigned __int8 eType; //0x0002
+      char _0x03[0x5]; //0x0003
+      vec3_t origin; //0x0008
+      vec2_t viewAngles; //0x0014
+      char pad_001C[464]; //0x001C
+    
+    }; //Size: 0x01EC
+    </blockquote>
+
+    <blockquote>
+      <p>How I filled the structs</p>
+      <pre>
+      <span class="hljs-keyword">UiContext*</span> UiContext = (UiContext*)0x83725CD0;
+      cg_t* cg = (cg_t*)0x82770180;
+      centity_t* cg_entitiesArray = (centity_t*)0x82673F80;
+    </blockquote>
+  
+    <blockquote>
+      <p>WorldToScreen</p>
+      <pre>
+        float DotProduct(vec3_t self, vec3_t other) {
+          return (self.x * other.x) + (self.y * other.y) + (self.z * other.z);
+        }
+        
+        bool WorldToScreen(vec3_t worldPos, vec2_t* screenPos)
+        {
+        
+          vec3_t Pos = worldPos - cg->eyePos;
+          vec3_t Transform;
+        
+          Transform.x = DotProduct(Pos, cg->viewAxis[1]);
+          Transform.y = DotProduct(Pos, cg->viewAxis[2]);
+          Transform.z = DotProduct(Pos, cg->viewAxis[0]);
+        
+          if (Transform.z < 0.1f)
+            return false;
+          vec2_t Center = vec2_t(cg->width / 2, cg->height / 2);
+          screenPos->x = Center.x * (1 - (Transform.x / cg->fovX / Transform.z));
+          screenPos->y = Center.y * (1 - (Transform.y / cg->foxY / Transform.z));
+        }
+    </blockquote>
+
+
+    <blockquote>
+      <p>Bone Strings</p>
+      <pre>
+        const char *boneStr[] = {
+          "left_hand_ik",
+          "right_hand_ik",
+          "tag_flash",
+          "tag_flash_s",
+          "drone",
+          "tag_origin",
+          "mainroot",
+          "spinelower",
+          "spinemid",
+          "spineupper",
+          "neck",
+          "head",
+          "l_clavicle",
+          "l_upperarm",
+          "l_forearm",
+          "l_wrist",
+          "l_wrist_twist",
+          "r_clavicle",
+          "r_upperarm",
+          "r_forearm",
+          "r_wrist",
+          "r_wrist_twist",
+          "l_thigh",
+          "l__calf",
+          "l_foot",
+          "r_thigh",
+          "r_calf",
+          "r_foot",
+          "tag_weapon_right",
+          "j_ring_le_1",
+          "l_index_1",
+          "l_mid_1",
+          "l_pinky_1",
+          "l_thumb_1",
+          "l_ring_2",
+          "l_index_2",
+          "l_mid_2",
+          "l_pinky_2",
+          "l_thumb_2",
+          "l_ring_3",
+          "l_index_3",
+          "l_mid_3",
+          "l_pinky_3",
+          "l_thumb_3",
+          "r_ring_1",
+          "r_index_1",
+          "r_mid_1",
+          "r_pinky_1",
+          "r_thumb_1",
+          "r_ring_2",
+          "r_index_2",
+          "r_mid_2",
+          "r_pinky_2",
+          "r_thumb_2",
+          "r_ring_3",
+          "r_index_3",
+          "r_mid_3",
+          "r_pinky_3",
+          "r_thumb_3"
+      };
+    </blockquote>
