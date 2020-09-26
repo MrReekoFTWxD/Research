@@ -14,7 +14,7 @@ Discord MrReeko#3989
 
 | Modified Call of Duty Engine |
 | ----------- |
-| [JB 007: QoS](https://jekyllrb.com/)| 
+| [JB 007: QoS](https://mrreekoftwxd.github.io/Research/jb007QoS)| 
 
 | idTech 4 |
 | ----------- |
