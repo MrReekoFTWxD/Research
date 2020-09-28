@@ -402,52 +402,78 @@ dragunov
 g3
 winchester1200
 uzi
+weapon_case
+p99
+p99_s
+flash_grenade
+wa2000_sca_s
+WA2000_intro
+saf9_sca
+SAF9_SCa_s
+p99_wet_s
+p99_wet
+1911
+1911_s
+1911_wet
+1911_wet_s
+m14_sca
+m14_sca_s
+concussion_grenade
+claymore
     </blockquote>
       <blockquote>
       <p>Dvars</p>
       <pre>
 con_minicon 1
 con_miniconlines 20 // show minicon for debug text
-com_maxfps 200 // Max fps
-toggle timescale 0.1 10 1 // toggles game speed
 
-//Actions on Player
+com_maxfps 200 // Max fps
+
+toggle timescale 0.1 10 1 // toggles game speed
 cg_ufo //UFO but it saves previous pos
 ufo // controllable noclip
 noclip //fly through walls
+r_showtris // shows game wiremesh
+r_fullbright //Toggles game shadows
+r_fog //toggles fog
 kill //suicide
 god // inf health
-demigod //Godmode with flinch
+cl_paused //pauses game
+map_restart //restarts level
+r_lightmap //toggles shadows effect
+r_blur //screen blur
+r_normalmap //Changes reflection resolution?
+cg_drawmaterial //show material name
+
+set developer 2
+set developer_script 1
+set com_statmon 1
+set monkeytoy 1//Enable Developer
+
+cg_drawfps //show fps
+cg_fov //fov
+fx_enable //toggle game fx
+
+cg_draw2D //hides fps
+cg_drawHUD //Hides hud
+
+r_znear //map rendering
+r_lodscale // map quality
+
+sm_enable //shadow sharpness
 notarget //Ignored by ai
 give ammo //gives ammo
 give all//gives all weapons
+demigod //Godmode with flinch
+cg_shellshock //Shell shock for duration
 give allammo //gives all ammo
 ammoCounterHide //show weapon ammo
 give weapons //Gives levels weapons
 take weapons //takes all weapons
 togglesilencer //equips silencer for valid weapons
 
-cl_paused //pauses game
-cg_drawmaterial //show material name
-cg_shellshock //Shell shock for duration
-fx_enable //toggle game fx
-
-//Dev/Debug
-set developer 2
-set developer_script 1
-set com_statmon 1
-set monkeytoy 1//Enable Developer
-debug_reflection //dev sphere
-
-cg_drawfps //show fps
-cg_fov //fov
-cg_draw2D //hides fps
-cg_drawHUD //Hides hud
-
-sm_enable //shadow sharpness
-map_restart //restarts level
 devmap //loads map
-  //map names
+//map names
   whites_estate
   siena_rooftops
   operahouse
@@ -466,18 +492,8 @@ devmap //loads map
   haines_estate
   focus_test_map
 
-r_lightmap //toggles shadows effect
-r_showtris // shows game wiremesh
-r_fullbright //Toggles game shadows
-r_fog //toggles fog
-r_blur //screen blur
-r_normalmap //Changes reflection resolution?
-r_znear //map rendering
-r_lodscale // map quality
-r_filmTweakContrast //contrast
-r_filmTweakBrightness //surface beightness
-r_filmTweakInvert //Screen Invert
-r_filmTweakLightTint //Surface Light Color
+debug_reflection //dev sphere
+
 r_displaycontrast //screen brightness
 r_displaybrightness //screen saturation
 r_colorMap //scene color map
@@ -489,11 +505,116 @@ r_drawBModels //show background models
 r_drawSModels //show surface models
 r_drawXModels //Show skybox
 r_drawWorld // show map
-r_reviveFX_enable //black and white
-r_poisonFX_enable //W@W poison effect
 r_singleCell //distance lighting impact?
-set r_filmUseTweaks 1
-set r_filmTweakEnable 1//enable film tweaks  </blockquote>
+
+aim_input_graph_debug //prints viewpos to minicon
+
+ai_enable //toggles ai
+
+ai_enableAudition //Same as notarget?
+
+level_notify puppetToggle //Drops camera?
+
+r_texFilterDisable //film grain / low res textures
+
+//Screen Grain
+r_pipSecondaryMode //Toggles Grain Block
+r_pipSecondaryX
+r_pipSecondaryY
+r_pipSecondaryAspect
+r_pipSecondaryAnchor
+r_pipSecondaryScale
+cg_pipstatic_opacity //Shows grain
+
+//Screen Poison Effect
+r_poisonFX_enable //Toggles poison fx
+r_poisonFX_pulse //Changes intensity
+r_poisonFX_warpX //Changes x intensity
+r_poisonFX_warpY //Changes y intensity
+r_poisonFX_dvisionA //Changes rotation range
+r_poisonFX_dvisionX //Adds distortion
+r_poisonFX_dvisionY
+
+//Revive Vision Toggle
+r_reviveFX_enable //Toggles effect
+r_reviveFX_highThreshold //Color intensity
+r_reviveFX_lowThreshold //Edge blur range
+r_reviveFX_blurRadiusEdge //Edge Blue quality
+r_reviveFX_contrastEdge //Edge contrast
+r_reviveFX_brightnessEdge //Edge brightness
+r_reviveFX_desaturationEdge //Edge Desaturation
+r_reviveFX_lightTintEdge //Edge Color
+r_reviveFX_darkTintEdge //Another Edge Color
+r_reviveFX_contrastCenter //Center screen contrast
+r_reviveFX_brightnessCenter //Center Screen Brightness
+r_reviveFX_desaturationCenter //Center Screen Saturation
+r_reviveFX_lightTintCenter //Screen color 1
+r_reviveFX_darkTintCenter //Screen Color 2
+
+r_filmSharpen //Screen sharpness
+
+//Distance blur
+r_dof_enable //toggles distance blur
+r_dof_tweak //Blurs near
+r_dof_nearBlur //near blur intensity
+r_dof_farBlur //distance blur intensity
+r_dof_viewModelStart
+r_dof_viewModelEnd
+r_dof_nearStart
+r_dof_nearEnd
+r_dof_farStart
+r_dof_farEnd
+
+r_customMSAA //Toggles something
+
+//Screen tint
+r_filmUseTweaks //Toggles screen tinting
+r_filmTweakEnable //Enable tweaks?
+r_filmTweakThreshold //Sharpness Effect?
+r_filmTweakReset //Unknown
+r_filmTweakColorTemp //Screen temp
+r_filmTweakHue //Screen hue
+r_filmTweakSaturation //Black and white
+r_filmTweakBlackLevel //Black color
+r_filmTweakWhiteLevel //White color
+r_filmTweakContrast //Screen contrast
+r_filmTweakBrightness //Screen brightness
+r_filmTweakInvert //invert screen
+r_filmTweakTintDLRange //No idea
+r_filmTweakDarkTint //Dark screen tint
+r_filmTweakMiddleTint //Lighting tint
+r_filmTweakLightTint //light color
+r_filmTweakDarkLightVisual //Light tweak full takeover?
+
+scr_art_tweak //thicker fog
+
+g_gravity //game gravity
+
+g_speed //Speed - seems ineffective
+player_sprintSpeedScale //sprint speed
+friction //Friction
+phys_frictionScale //Seems ineffective
+
+player_sustainammo// unlimited ammo
+
+cg_laserForceOn //enemy weapon lasers
+
+//wallhack
+r_znear_depthhack
+r_znear
+r_zfar
+
+player_burstFireCooldown //weapon fire rate
+
+dropweapon //drops weapon
+
+ai axis delete //deletes enemies
+
+r_specularMap //chrome map
+
+G_Ai //freeze ai
+
+ai_disableSpawn //toggle ai spawn  </blockquote>
       
     <table>
       <thead>
