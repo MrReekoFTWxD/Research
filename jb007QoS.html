@@ -7,17 +7,22 @@
 <body>
 
 <link rel="stylesheet" href="css\style.css">
-<h1>   &#8193James Bond 007 Quantum of Solace</h1>
-<body>   &#8193&#8193&#8193 TitleID - 415607FF</body>
+<h1 class="soul" style="
+    text-align: center;
+    font-weight: bold;
+">James Bond 007 Quantum of Solace</h1><h1 class="soul" style="
+    font-size: larger;
+    text-align: center;
+">TitleID - 415607FF</h1>
 <blockquote>
  
   </blockquote>
   <table>
   <thead>
   <tr>
-  <th>Rendering Functions</th>
-  <th>Offsets</th>
-  <th>Args</th>
+  <th class="alsosoul">Rendering Functions</th>
+  <th class="alsosoul">Offsets</th>
+  <th class="alsosoul">Args</th>
   </tr>
   </thead>
   <tbody>
@@ -59,9 +64,9 @@
   <table>
   <thead>
   <tr>
-  <th>Random Functions</th>
-  <th>Offsets</th>
-  <th>Args</th>
+  <th class="alsosoul">Random Functions</th>
+  <th class="alsosoul">Offsets</th>
+  <th class="alsosoul">Args</th>
   </tr>
   </thead>
   <tbody>
@@ -109,9 +114,9 @@
   <table>
     <thead>
     <tr>
-    <th>Hook</th>
-    <th>Offsets</th>
-    <th>Args</th>
+    <th class="alsosoul">Hook</th>
+    <th class="alsosoul">Offsets</th>
+    <th class="alsosoul">Args</th>
     </tr>
     </thead>
     <tbody>
@@ -126,9 +131,9 @@
   <table>
     <thead>
     <tr>
-    <th>Pointer</th>
-    <th>Offsets</th>
-    <th>Size</th>
+    <th class="alsosoul">Pointer</th>
+    <th class="alsosoul">Offsets</th>
+    <th class="alsosoul">Size</th>
     </tr>
     </thead>
     <tbody>
@@ -243,11 +248,9 @@
 </code>
 </blockquote>
   
-
-<blockquote>
-  <p>centity_t</p>
-  <pre>
-    <span class="hljs-keyword">enum</span> entityTypes {
+  	  	  <!-- CSS Box -->
+  <div class="codeheader" id="codeheader_css">centity_t</div>
+  <div id="codebox"><pre><code data-language="css"><span class="hljs-keyword">enum</span> entityTypes {
       ET_GENERAL,
       ET_PLAYER,
       ET_PLAYER_SHADOW,
@@ -271,8 +274,7 @@
       ET_ZONE_EMITTER,
       ET_TRIGGER,
     };
-
-    <span class="hljs-keyword">struct</span> centity_t
+	<span class="hljs-keyword">struct</span> centity_t
     {
       char _0x00[0x2]; //0x0000
       unsigned __int8 eType; //0x0002
@@ -281,21 +283,19 @@
       vec2_t viewAngles; //0x0014
       char pad_001C[464]; //0x001C
     
-    }; //Size: 0x01EC
-    </blockquote>
+    }; //Size: 0x01EC</code></pre></div>
+	 <!-- CSS Box -->
 
-    <blockquote>
-      <p>How I filled the structs</p>
-      <pre>
-      <span class="hljs-keyword">UiContext*</span> UiContext = (UiContext*)0x83725CD0;
+	  	  <!-- CSS Box -->
+  <div class="codeheader" id="codeheader_css">How I filled the structs</div>
+  <div id="codebox"><pre><code data-language="css">UiContext = (UiContext*)0x83725CD0;
       cg_t* cg = (cg_t*)0x82770180;
-      centity_t* cg_entitiesArray = (centity_t*)0x82673F80;
-    </blockquote>
+      centity_t* cg_entitiesArray = (centity_t*)0x82673F80;</code></pre></div>
+	 <!-- CSS Box -->
   
-    <blockquote>
-      <p>WorldToScreen</p>
-      <pre>
-        float DotProduct(vec3_t vec1, vec3_t vec2) {
+  	  <!-- CSS Box -->
+  <div class="codeheader" id="codeheader_css">WorldToScreen</div>
+  <div id="codebox"><pre><code data-language="css">float DotProduct(vec3_t vec1, vec3_t vec2) {
           return (vec1.x * vec2.x) + (vec1.y * vec2.y) + (vec1.z * vec2.z);
         }
         
@@ -314,14 +314,12 @@
           vec2_t Center = vec2_t(cg->width / 2, cg->height / 2);
           screenPos->x = Center.x * (1 - (Transform.x / cg->fovX / Transform.z));
           screenPos->y = Center.y * (1 - (Transform.y / cg->foxY / Transform.z));
-        }
-    </blockquote>
+        }</code></pre></div>
+	 <!-- CSS Box -->
 
-
-    <blockquote>
-      <p>Bone Strings</p>
-      <pre>
-        const char *boneStr[] = {
+  <!-- CSS Box -->
+  <div class="codeheader" id="codeheader_css">Bone Strings</div>
+  <div id="codebox"><pre><code data-language="css">const char *boneStr[] = {
           "left_hand_ik",
           "right_hand_ik",
           "tag_flash",
@@ -381,17 +379,18 @@
           "r_mid_3",
           "r_pinky_3",
           "r_thumb_3"
-      };
-    </blockquote>
-    
-    <blockquote>
-      <p>SV_GameSendServerCommand Functions</p>
-      <pre>
-      c - iprintlnbold
-      e - say
+      };</code></pre></div>
+	 <!-- CSS Box -->
+	  <!-- CSS Box -->
+  <div class="codeheader" id="codeheader_css">SV_GameSendServerCommand Functions</div>
+  <div id="codebox"><pre><code data-language="css">c - iprintlnbold
+e - say
 i - iprintln
-k - objective
-    </blockquote>
+k - objective</code></pre></div>
+	 <!-- CSS Box -->
+	
+	
+   
     
     <blockquote>
       <p>All Weapons</p>
@@ -639,7 +638,7 @@ ai_disableSpawn //toggle ai spawn  </blockquote>
     <table>
       <thead>
       <tr>
-      <th>Contributions</th>
+      <th class="alsosoul">Contributions</th>
       </tr>
       </thead>
       <tbody>
