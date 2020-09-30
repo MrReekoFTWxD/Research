@@ -224,6 +224,29 @@
 </code>
 </blockquote>
 
+  <!-- CSS Box -->
+  <div class="codeheader" id="codeheader_css">cg_t</div>
+  <div id="codebox"><pre><code data-language="css"><span class="hljs-keyword">struct</span> <span class="hljs-title">refdef_t</span></span>
+      {
+        <span class="hljs-keyword">int</span> x; //0x0000 
+        <span class="hljs-keyword">int</span> y; //0x0004 
+        <span class="hljs-keyword">int</span> width; //0x0008 
+        <span class="hljs-keyword">int</span> height; //0x000C 
+        <span class="hljs-keyword">float</span> tanHalfFovX; //0x0010 
+        <span class="hljs-keyword">float</span> tanHalfFovY; //0x0014
+        <span class="hljs-keyword">char</span> _0x18[0x30]; //0x0018 
+	<span class="hljs-keyword">vec3_t</span> eyePosOld; //0x0048 
+        <span class="hljs-keyword">vec3_t</span> eyePos; //0x0054 
+        <span class="hljs-keyword">vec3_t</span> viewAxis[3]; //0x0060 
+    };
+
+    <span class="hljs-keyword">struct</span> <span class="hljs-keyword">cg_t</span>
+    {
+      <span class="hljs-keyword">char</span> _0x00[0x1E34C]; //0x0000 
+      <span class="hljs-keyword">refdef_t</span> refdef; //0x1E34C 
+    };</code></pre></div>
+	 <!-- CSS Box -->
+
 <blockquote>
   <p>cg_t</p>
   <pre>
