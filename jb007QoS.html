@@ -255,40 +255,50 @@
   
   	  	  <!-- CSS Box -->
   <div class="codeheader" id="codeheader_css">centity_t</div>
-  <div id="codebox"><pre><code data-language="css"><span class="hljs-keyword">enum</span> entityTypes {
-      ET_GENERAL,
-      ET_PLAYER,
-      ET_PLAYER_SHADOW,
-      ET_ITEM,
-      ET_MISSILE,
-      ET_INVISIBLE,
-      ET_SCRIPTMOVER,
-      ET_SOUND_BLEND,
-      ET_FX,
-      ET_LOOP_FX,
-      ET_PRIMARY_LIGHT,
-      ET_MG42,
-      ET_ACTOR,
-      ET_ACTOR_SPAWNER,
-      ET_ACTOR_CORPSE,
-      ET_VEHICLE, //enemys are cg_entities[i].eType = 0xF ??? idk why maybe using wrong etype but worked for me
-      ET_VEHICLE_CORPSE,
-      ET_VEHICLE_COLLMAP,
-      ET_INTERACTABLE,
-      ET_DOOR,
-      ET_ZONE_EMITTER,
-      ET_TRIGGER,
-    };
-	<span class="hljs-keyword">struct</span> centity_t
-    {
-      char _0x00[0x2]; //0x0000
-      unsigned __int8 eType; //0x0002
-      char _0x03[0x5]; //0x0003
-      vec3_t origin; //0x0008
-      vec2_t viewAngles; //0x0014
-      char pad_001C[464]; //0x001C
-    
-    }; //Size: 0x01EC</code></pre></div>
+  <div id="codebox"><pre><code data-language="css">class cpose_t
+{
+public:
+    short lightingHandle; //0x0000
+    __int8 eType; //0x0002
+    __int8 eTypeUnion; //0x0003
+    char pad_0004[4]; //0x0004
+    vec3_t origin; //0x0008
+    vec3_t angles; //0x0014
+    char pad_0020[4]; //0x0020
+}; //Size: 0x0024
+
+class trajectory_t
+{
+public:
+    int trType; //0x0000
+    char pad_0004[8]; //0x0004
+    vec3_t trBase; //0x000C
+    vec3_t trDelta; //0x0018
+}; //Size: 0x0024
+
+class LerpEntityState
+{
+public:
+    int eFlags; //0x0000
+    class trajectory_t pos; //0x0004
+    char pad_0028[76]; //0x0028
+}; //Size: 0x0074
+
+class centity_t
+{
+public:
+    class cpose_t pose;
+    char pad_0024[64]; //0x0024
+    class LerpEntityState N00000060; //0x0064
+    char pad_00D8[148]; //0x00D8
+    int number; //0x016C
+    char pad_0170[80]; //0x0170
+    int trueCheck; //0x01C0 // & 0x1000000
+    char pad_01C4[36]; //0x01C4
+    int trueCheck2; //0x01E8 // & 0x1000000
+
+
+}; //Size: 0x01EC</code></pre></div>
 	 <!-- CSS Box -->
 
 	  	  <!-- CSS Box -->
