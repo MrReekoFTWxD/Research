@@ -69,6 +69,7 @@
 .alsosoul {
 	animation: borderRotate 6s linear 0s infinite;
 }
+
 @import url(https://fonts.googleapis.com/css?family=Roboto:500);
 @keyframes backgroundColor {
 	from {
@@ -87,6 +88,32 @@
 		background-color: #6666ff;
 	}
 }
+
+.item1 { grid-area: funcName; }
+.item2 { grid-area: offset; }
+.item3 { grid-area: args; }
+
+.grid-container {
+  display: grid;
+  grid-template-areas: 
+  'funcName funcName'
+  'offset args';
+  grid-template-columns: 110px;
+  grid-gap: 2px;
+  animation: backgroundColor 6s linear 0s infinite;
+  padding: 2px;
+    margin-right: 10px;
+	margin-left: 10px;
+	margin-bottom: 5px;
+}
+
+.grid-container > div {
+  color: #eaeaea;
+  background-color: #282828;
+  padding: 5px;
+  font-size: 16px;
+}
+
 #codebox {
 	padding: 0px;
 	font-family: Courier, sans-serif;
