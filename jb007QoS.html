@@ -1,177 +1,173 @@
-
 <!DOCTYPE html>
 <html>
-<head>
-  <title>.\Research\James Bond 007 Quantum of Solace</title>
-</head>
+	<head>
+		<title>James Bond 007: Quantum of Solace</title>
+	</head>
 <body>
 
-<link rel="stylesheet" href="css\style.css">
-<h1 class="soul" style="
-    text-align: center;
-    font-weight: bold;
-">James Bond 007 Quantum of Solace</h1><h1 class="soul" style="
-    font-size: larger;
-    text-align: center;
-">TitleID - 415607FF</h1>
-<blockquote>
- 
-  </blockquote>
-  <table>
-  <thead>
-  <tr>
-  <th class="alsosoul">Rendering Functions</th>
-  <th class="alsosoul">Offsets</th>
-  <th class="alsosoul">Args</th>
-  </tr>
-  </thead>
-  <tbody>
-  <tr>
-  <td>R_AddCmdDrawPic</td>
-  <td>0x821AEDC0</td>
-  <td>float x, float y, float w, float h, float s0, float t0, float s1, float t1, const float* color, Material* material</td>
-  </tr>
-   <tr>
-  <td>R_AddCmdDrawStretchPicRotateXY</td>
-  <td>0x82570F40</td>
-  <td>float x, float y, float w, float h, float s0, float t0, float s1, float t1, float angle, const float *color, Material *material</td>
-  </tr>
-  <tr>
-  <td>R_AddCmdDrawStretchPicFlipST</td>
-  <td>0x82570DA8</td>
-  <td>float x, float y, float w, float h, float s0, float t0, float s1, float t1, const float* color, Material* material</td>
-  </tr>
-  <tr>
-  <td>Material_RegisterHandle</td>
-  <td>0x82565398</td>
-  <td>const char* name, int img</td>
-  </tr>
-  <tr>
-  <td>R_RegisterFont</td>
-  <td>0x821BD4F0</td>
-  <td>const char* name, int img</td>
-  </tr>
-  <tr>
-  <td>R_AddCmdDrawText</td>
-  <td>0x82572438</td>
-  <td>const char *text, int maxChars, Font *font, float x, float y, float xScale, float yScale, float rotation, const float *color, int style</td>
-  </tr>
-  <tr>
-  <td>R_TextWidth</td>
-  <td>0x82564C58</td>
-  <td>const char* text, int maxchar, Font* font</td>
-  </tr>
-  <tr>
-  <td>R_TextHeight</td>
-  <td>0x82564D48</td>
-  <td>Font *font</td>
-  </tr>
-  </tbody>
-  </table>
- 
-  </code></pre>
-  </blockquote>
-  <table>
-  <thead>
-  <tr>
-  <th class="alsosoul">Random Functions</th>
-  <th class="alsosoul">Offsets</th>
-  <th class="alsosoul">Args</th>
-  </tr>
-  </thead>
-  <tbody>
-  <tr>
-  <td>Cbuf_AddText</td>
-  <td>0x82298750</td>
-  <td>int local, char* cmd</td>
-  </tr>
-  <tr>
-  <td>CG_GameMessage</td>
-  <td>0x82180200</td>
-  <td>char* text</td>
-  </tr>
-  <tr>
-  <td>SV_GameSendServerCommand</td>
-  <td>0x822C1F50</td>
-  <td>int clientIndex, int type, char* cmd</td>
-  </tr>
-  <tr>
-  <td>SL_GetString</td>
-  <td>0x822AF3B0</td>
-  <td>const char* str, int localController</td>
-  </tr>
-  <tr>
-  <td>AimTarget_GetTagPos</td>
-  <td>0x821261D0</td>
-  <td>int local, centity_t const* cen, unsigned int, vec3_t &amp;out</td>
-  </tr>
-  <tr>
-  <td>CG_CompassDrawPlayerMap</td>
-  <td>0x8216D060</td>
-  <td>int localClientNum, CompassType compassType, rectDef_s *parentRect, rectDef_s *rect, Material *material, const float *color</td>
-  </tr>
-  <tr>
-  <td>CG_CompassDrawPlayer</td>
-  <td>0x8216D568</td>
-  <td>int localClientNum, CompassType compassType, rectDef_s *parentRect, rectDef_s *rect, Material *material, const float *color &#8193&#8193&#8193&#8193&#8193&#8193</td>
-  </tr>
-  <td>va</td>
-  <td>0x822EBA78</td>
-  <td>const char* fmt, ...</td>
-  </tr>
-  </tbody>
-  </table>
-  <table>
-    <thead>
-    <tr>
-    <th class="alsosoul">Hook</th>
-    <th class="alsosoul">Offsets</th>
-    <th class="alsosoul">Args</th>
-    </tr>
-    </thead>
-    <tbody>
-    <tr>
-    <td>Menu_PaintAll</td>
-    <td>0x822D90C8 </td>
-    <td>UiContext* dc, menuDef* menu &#8193&#8193&#8193&#8193&#8193&#8193&#8193&#8193&#8193&#8193&#8193&#8193&#8193&#8193&#8193&#8193&#8193&#8193&#8193&#8193&#8193&#8193&#8193&#8193&#8193&#8193&#8193&#8193&#8193</td>
-    </tr>
-    </tbody>
-  </table>
+	<link rel="stylesheet" href="css\style.css">
+	<h1 class="soul" style="text-align: center; font-weight: bold;">James Bond 007 Quantum of Solace</h1>
+	<h1 class="soul" style="font-size: larger; text-align: center;">TitleID - 415607FF</h1>
 
-  <table>
-    <thead>
-    <tr>
-    <th class="alsosoul">Pointer</th>
-    <th class="alsosoul">Offsets</th>
-    <th class="alsosoul">Size</th>
-    </tr>
-    </thead>
-    <tbody>
-    <tr>
-    <td>UiContext</td>
-    <td>0x83725CD0 </td>
-    <td>0x6E5C</td>
-    </tr>
-    <tr>
-    <td>ScrPlace</td>
-    <td>0x828A1708 </td>
-    <td>0xBC</td>
-    </tr>
-    <tr>
-    <td>cg_entityArray</td>
-    <td>0x82673F80 </td>
-    <td>0x1EC</td>
-    </tr>
-    <tr>
-    <td>cg_t</td>
-    <td>0x82770180 </td>
-    <td>0x534A8 &#8193&#8193&#8193&#8193&#8193&#8193&#8193&#8193&#8193&#8193&#8193&#8193&#8193&#8193&#8193&#8193&#8193&#8193&#8193&#8193&#8193&#8193&#8193&#8193&#8193&#8193&#8193&#8193&#8193&#8193&#8193&#8193&#8193&#8193&#8193&#8193&#8193&#8193&#8193&#8193&#8193&#8193</td>
-    </tr>
-    </tbody>
-  </table>
-  <blockquote>
-    <p>Rendering Structs</p>
-    <pre><code class="lang-cpp"><span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">Material</span></span>
+	<table>
+		<thead>
+			<tr>
+				<th class="alsosoul">Rendering Functions</th>
+				<th class="alsosoul">Offsets</th>
+				<th class="alsosoul">Args</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>R_AddCmdDrawPic</td>
+				<td>0x821AEDC0</td>
+				<td>float x, float y, float w, float h, float s0, float t0, float s1, float t1, const float* color, Material* material</td>
+			</tr>
+			<tr>
+				<td>R_AddCmdDrawStretchPicRotateXY</td>
+				<td>0x82570F40</td>
+				<td>float x, float y, float w, float h, float s0, float t0, float s1, float t1, float angle, const float *color, Material *material</td>
+			</tr>
+			<tr>
+				<td>R_AddCmdDrawStretchPicFlipST</td>
+				<td>0x82570DA8</td>
+				<td>float x, float y, float w, float h, float s0, float t0, float s1, float t1, const float* color, Material* material</td>
+			</tr>
+			<tr>
+				<td>Material_RegisterHandle</td>
+				<td>0x82565398</td>
+				<td>const char* name, int img</td>
+			</tr>
+			<tr>
+				<td>R_RegisterFont</td>
+				<td>0x821BD4F0</td>
+				<td>const char* name, int img</td>
+			</tr>
+			<tr>
+				<td>R_AddCmdDrawText</td>
+				<td>0x82572438</td>
+				<td>const char *text, int maxChars, Font *font, float x, float y, float xScale, float yScale, float rotation, const float *color, int style</td>
+			</tr>
+			<tr>
+				<td>R_TextWidth</td>
+				<td>0x82564C58</td>
+				<td>const char* text, int maxchar, Font* font</td>
+			</tr>
+			<tr>
+				<td>R_TextHeight</td>
+				<td>0x82564D48</td>
+				<td>Font *font</td>
+			</tr>
+		</tbody>
+	</table>
+ 
+	<table>
+		<thead>
+			<tr>
+				<th class="alsosoul">Random Functions</th>
+				<th class="alsosoul">Offsets</th>
+				<th class="alsosoul">Args</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>Cbuf_AddText</td>
+				<td>0x82298750</td>
+				<td>int local, char* cmd</td>
+			</tr>
+			<tr>
+				<td>CG_GameMessage</td>
+				<td>0x82180200</td>
+				<td>char* text</td>
+			</tr>
+			<tr>
+				<td>SV_GameSendServerCommand</td>
+				<td>0x822C1F50</td>
+				<td>int clientIndex, int type, char* cmd</td>
+			</tr>
+			<tr>
+				<td>SL_GetString</td>
+				<td>0x822AF3B0</td>
+				<td>const char* str, int localController</td>
+			</tr>
+			<tr>
+				<td>AimTarget_GetTagPos</td>
+				<td>0x821261D0</td>
+				<td>int local, centity_t const* cen, unsigned int, vec3_t &amp;out</td>
+			</tr>
+			<tr>
+				<td>CG_CompassDrawPlayerMap</td>
+				<td>0x8216D060</td>
+				<td>int localClientNum, CompassType compassType, rectDef_s *parentRect, rectDef_s *rect, Material *material, const float *color</td>
+			</tr>
+			<tr>
+				<td>CG_CompassDrawPlayer</td>
+				<td>0x8216D568</td>
+				<td>int localClientNum, CompassType compassType, rectDef_s *parentRect, rectDef_s *rect, Material *material, const float *color &#8193&#8193&#8193&#8193&#8193&#8193</td>
+			</tr>
+			<tr>
+				<td>va</td>
+				<td>0x822EBA78</td>
+				<td>const char* fmt, ...</td>
+			</tr>
+		</tbody>
+	</table>
+  
+	<table>
+		<thead>
+			<tr>
+				<th class="alsosoul">Hook</th>
+				<th class="alsosoul">Offsets</th>
+				<th class="alsosoul">Args</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>Menu_PaintAll</td>
+				<td>0x822D90C8</td>
+				<td>UiContext* dc, menuDef* menu &#8193&#8193&#8193&#8193&#8193&#8193&#8193&#8193&#8193&#8193&#8193&#8193&#8193&#8193&#8193&#8193&#8193&#8193&#8193&#8193&#8193&#8193&#8193&#8193&#8193&#8193&#8193&#8193&#8193</td>
+			</tr>
+		</tbody>
+	</table>
+
+	<table>
+		<thead>
+			<tr>
+				<th class="alsosoul">Pointer</th>
+				<th class="alsosoul">Offsets</th>
+				<th class="alsosoul">Size</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>UiContext</td>
+				<td>0x83725CD0</td>
+				<td>0x6E5C</td>
+			</tr>
+			<tr>
+				<td>ScrPlace</td>
+				<td>0x828A1708</td>
+				<td>0xBC</td>
+			</tr>
+			<tr>
+				<td>cg_entityArray</td>
+				<td>0x82673F80</td>
+				<td>0x1EC</td>
+			</tr>
+			<tr>
+				<td>cg_t</td>
+				<td>0x82770180</td>
+				<td>0x534A8 &#8193&#8193&#8193&#8193&#8193&#8193&#8193&#8193&#8193&#8193&#8193&#8193&#8193&#8193&#8193&#8193&#8193&#8193&#8193&#8193&#8193&#8193&#8193&#8193&#8193&#8193&#8193&#8193&#8193&#8193&#8193&#8193&#8193&#8193&#8193&#8193&#8193&#8193&#8193&#8193&#8193&#8193</td>
+			</tr>
+		</tbody>
+	</table>
+  
+<!-- Rendering Structs -->
+	<div class="codeheader" id="codeheader_css">
+		Rendering Structs
+	</div>
+	<div id="codebox">
+		<pre><code data-language="css"><span class="hljs-keyword">struct</span> <span class="hljs-title">Material</span></code>
     {
         <span class="hljs-keyword">const</span> <span class="hljs-keyword">char</span>* name;
     }
@@ -179,14 +175,17 @@
     {
         <span class="hljs-keyword">const</span> <span class="hljs-keyword">char</span>* name;
         <span class="hljs-keyword">int</span> pixelHeight;
-    };
-  </code>
-</blockquote>
-<blockquote>
-  <p>Compass Structs</p>
-  <pre>
-    <code class="lang-cpp"><span class="hljs-class"><span class="hljs-keyword">enum</span> <span class="hljs-title">CompassType</span></span>
-      {
+    };</pre>
+	</div>
+<!-- Rendering Structs -->
+
+<!-- Compass Structs -->
+	<div class="codeheader" id="codeheader_css">
+		Compass Structs
+	</div>
+	<div id="codebox">
+		<pre><code data-language="css"><span class="hljs-keyword">enum</span> <span class="hljs-title">CompassType</span></code>
+		{
         <span class="hljs-keyword">COMPASS_TYPE_PARTIAL,</span>
         <span class="hljs-keyword">COMPASS_TYPE_FULL,</span>
     };
@@ -194,15 +193,16 @@
       {
         <span class="hljs-keyword">float</span> x, y, w, h;
         <span class="hljs-keyword">int</span> horzAlign, vertAlign;
-    };
-</code>
-</code>
-</blockquote>
+    };</code></pre>
+	</div>
+<!-- Compass Structs -->
   
-<blockquote>
-  <p>UiContext</p>
-  <pre>
-    <code class="lang-cpp"><span class="hljs-class"><span class="hljs-keyword">enum</span> UIContextIndex_t : DWORD
+<!-- UiContext -->
+	<div class="codeheader" id="codeheader_css">
+		UiContext
+	</div>
+	<div id="codebox">
+		<pre><code data-language="css"><span class="hljs-keyword">enum</span> UIContextIndex_t : DWORD
       {
         <span class="hljs-keyword">INVALID_UI_CONTEXT = 0xFFFFFFFF,</span>
         <span class="hljs-keyword">UI_CONTEXT_FRONTEND = 0x0,</span>
@@ -224,14 +224,16 @@
         <span class="hljs-keyword">float</span> FPS; //0x0028 
         <span class="hljs-keyword">float</span> blurRadiusOut; //0x002C 
 
-    };
-</code>
-</code>
-</blockquote>
+    };</code></code></pre>
+	</div>
+<!-- UiContext -->
 
-  <!-- CSS Box -->
-  <div class="codeheader" id="codeheader_css">cg_t</div>
-  <div id="codebox"><pre><code data-language="css"><span class="hljs-keyword">struct</span> <span class="hljs-title">refdef_t</span></span>
+<!-- cg_t -->
+	<div class="codeheader" id="codeheader_css">
+		cg_t
+	</div>
+	<div id="codebox">
+		<pre><code data-language="css"><span class="hljs-keyword">struct</span> <span class="hljs-title">refdef_t</span></code>
       {
         <span class="hljs-keyword">int</span> x; //0x0000 
         <span class="hljs-keyword">int</span> y; //0x0004 
@@ -240,7 +242,7 @@
         <span class="hljs-keyword">float</span> tanHalfFovX; //0x0010 
         <span class="hljs-keyword">float</span> tanHalfFovY; //0x0014
         <span class="hljs-keyword">char</span> _0x18[0x30]; //0x0018 
-	<span class="hljs-keyword">vec3_t</span> eyePosOld; //0x0048 
+    <span class="hljs-keyword">vec3_t</span> eyePosOld; //0x0048 
         <span class="hljs-keyword">vec3_t</span> eyePos; //0x0054 
         <span class="hljs-keyword">vec3_t</span> viewAxis[3]; //0x0060 
     };
@@ -249,41 +251,16 @@
     {
       <span class="hljs-keyword">char</span> _0x00[0x1E34C]; //0x0000 
       <span class="hljs-keyword">refdef_t</span> refdef; //0x1E34C 
-    };</code></pre></div>
-	 <!-- CSS Box -->
+    };</pre>
+	</div>
+<!-- cg_t -->
 
-<blockquote>
-  <p>cg_t</p>
-  <pre>
-    <code class="lang-cpp"><span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">refdef_t</span></span>
-      {
-        <span class="hljs-keyword">int</span> x; //0x0000 
-        <span class="hljs-keyword">int</span> y; //0x0004 
-        <span class="hljs-keyword">int</span> width; //0x0008 
-        <span class="hljs-keyword">int</span> height; //0x000C 
-        <span class="hljs-keyword">float</span> tanHalfFovX; //0x0010 
-        <span class="hljs-keyword">float</span> tanHalfFovY; //0x0014
-        <span class="hljs-keyword">char</span> _0x18[0x30]; //0x0018 
-        <span class="hljs-keyword">vec3_t</span> eyePos; //0x0048 
-        <span class="hljs-keyword">vec3_t</span> eyePosOld; //0x0054 
-        <span class="hljs-keyword">vec3_t</span> viewAxis[3]; //0x0060 
-    };
-
-    <span class="hljs-keyword">struct</span> <span class="hljs-keyword">cg_t</span>
-    {
-      <span class="hljs-keyword">char</span> _0x00[0x1E34C]; //0x0000 
-      <span class="hljs-keyword">refdef_t</span> refdef; //0x1E34C 
-    };
-
-    
-
-</code>
-</code>
-</blockquote>
-  
-  	  	  <!-- CSS Box -->
-  <div class="codeheader" id="codeheader_css">centity_t</div>
-  <div id="codebox"><pre><code data-language="css">class cpose_t
+<!-- centity_t -->
+	<div class="codeheader" id="codeheader_css">
+		centity_t
+	</div>
+	<div id="codebox">
+		<pre><code data-language="css">class cpose_t
 {
 public:
     short lightingHandle; //0x0000
@@ -326,43 +303,55 @@ public:
     int trueCheck2; //0x01E8 // & 0x1000000
 
 
-}; //Size: 0x01EC</code></pre></div>
-	 <!-- CSS Box -->
+}; //Size: 0x01EC</code></pre>
+	</div>
+<!-- centity_t -->
 
-	  	  <!-- CSS Box -->
-  <div class="codeheader" id="codeheader_css">How I filled the structs</div>
-  <div id="codebox"><pre><code data-language="css">UiContext = (UiContext*)0x83725CD0;
+<!-- How I filled the structs -->
+	<div class="codeheader" id="codeheader_css">
+		How I filled the structs
+	</div>
+	<div id="codebox">
+		<pre><code data-language="css">UiContext = (UiContext*)0x83725CD0;
       cg_t* cg = (cg_t*)0x82770180;
-      centity_t* cg_entitiesArray = (centity_t*)0x82673F80;</code></pre></div>
-	 <!-- CSS Box -->
+      centity_t* cg_entitiesArray = (centity_t*)0x82673F80;</code></pre>
+	</div>
+<!-- How I filled the structs -->
   
-  	  <!-- CSS Box -->
-  <div class="codeheader" id="codeheader_css">WorldToScreen</div>
-  <div id="codebox"><pre><code data-language="css">float DotProduct(vec3_t vec1, vec3_t vec2) {
+<!-- WorldToScreen -->
+	<div class="codeheader" id="codeheader_css">
+		WorldToScreen
+	</div>
+	<div id="codebox">
+		<pre><code data-language="css">float DotProduct(vec3_t vec1, vec3_t vec2) {
           return (vec1.x * vec2.x) + (vec1.y * vec2.y) + (vec1.z * vec2.z);
         }
         
         bool WorldToScreen(vec3_t worldPos, vec2_t* screenPos)
         {
         
-          vec3_t Pos = worldPos - cg->eyePos;
+          vec3_t Pos = worldPos - cg-&gt;eyePos;
           vec3_t Transform;
         
-          Transform.x = DotProduct(Pos, cg->viewAxis[1]);
-          Transform.y = DotProduct(Pos, cg->viewAxis[2]);
-          Transform.z = DotProduct(Pos, cg->viewAxis[0]);
+          Transform.x = DotProduct(Pos, cg-&gt;viewAxis[1]);
+          Transform.y = DotProduct(Pos, cg-&gt;viewAxis[2]);
+          Transform.z = DotProduct(Pos, cg-&gt;viewAxis[0]);
         
-          if (Transform.z < 0.1f)
+          if (Transform.z &lt; 0.1f)
             return false;
-          vec2_t Center = vec2_t(cg->width / 2, cg->height / 2);
-          screenPos->x = Center.x * (1 - (Transform.x / cg->fovX / Transform.z));
-          screenPos->y = Center.y * (1 - (Transform.y / cg->foxY / Transform.z));
-        }</code></pre></div>
-	 <!-- CSS Box -->
+          vec2_t Center = vec2_t(cg-&gt;width / 2, cg-&gt;height / 2);
+          screenPos-&gt;x = Center.x * (1 - (Transform.x / cg-&gt;fovX / Transform.z));
+          screenPos-&gt;y = Center.y * (1 - (Transform.y / cg-&gt;foxY / Transform.z));
+        }</code></pre>
+	</div>
+<!-- WorldToScreen -->
 
-  <!-- CSS Box -->
-  <div class="codeheader" id="codeheader_css">Bone Strings</div>
-  <div id="codebox"><pre><code data-language="css">const char *boneStr[] = {
+<!-- Bone Strings -->
+  <div class="codeheader" id="codeheader_css">
+		Bone Strings
+	</div>
+	<div id="codebox">
+		<pre><code data-language="css">const char *boneStr[] = {
           "left_hand_ik",
           "right_hand_ik",
           "tag_flash",
@@ -422,49 +411,18 @@ public:
           "r_mid_3",
           "r_pinky_3",
           "r_thumb_3"
-      };</code></pre></div>
-	 <!-- CSS Box -->
-	  <!-- CSS Box -->
-  <div class="codeheader" id="codeheader_css">SV_GameSendServerCommand Functions</div>
-  <div id="codebox"><pre><code data-language="css">c - iprintlnbold
-e - say
-i - iprintln
-k - objective</code></pre></div>
-	 <!-- CSS Box -->
+      };</code></pre>
+	</div>
+<!-- Bone Strings -->
 	
-	
-   
-    
-    <blockquote>
-      <p>All Weapons</p>
-      <pre>
-ak47
-ak47_semi
-ak47_grenadier
-ak74u
-ak74u_semi
-beretta
-g36c
-m14_scoped
-m16_basic
-m16_basic_semi
-m16_grenadier
-m203
-rpg
-saw
-m4_grunt
-m4_grunt_semi
-m4_grenadier
-m40a3
-mp5
-mp5_silencer
-usp
-at4
-dragunov
-g3
-winchester1200
-uzi
+<!-- Weapon List -->
+	<div class="codeheader" id="codeheader_css">
+		Weapon List
+	</div>
+	<div id="codebox">
+		<pre><code data-language="css">//Not Fully Tested
 weapon_case
+sony_phone
 p99
 p99_s
 flash_grenade
@@ -481,30 +439,48 @@ p99_wet
 m14_sca
 m14_sca_s
 concussion_grenade
-claymore
-    </blockquote>
-      <blockquote>
-      <p>Dvars</p>
-      <pre>
-con_minicon 1
+claymore</code></pre>
+	</div>
+<!-- Weapon List -->
+	 
+<!-- Dvar List -->
+	<div class="codeheader" id="codeheader_css">
+		Dvar List
+	</div>
+	<div id="codebox">
+		<pre><code data-language="css">con_minicon 1
 con_miniconlines 20 // show minicon for debug text
 
 com_maxfps 200 // Max fps
 
 toggle timescale 0.1 10 1 // toggles game speed
+
 cg_ufo //UFO but it saves previous pos
+
 ufo // controllable noclip
+
 noclip //fly through walls
+
 r_showtris // shows game wiremesh
+
 r_fullbright //Toggles game shadows
+
 r_fog //toggles fog
+
 kill //suicide
+
 god // inf health
+
 cl_paused //pauses game
+
 map_restart //restarts level
+
 r_lightmap //toggles shadows effect
+
 r_blur //screen blur
+
 r_normalmap //Changes reflection resolution?
+
 cg_drawmaterial //show material name
 
 set developer 2
@@ -513,60 +489,86 @@ set com_statmon 1
 set monkeytoy 1//Enable Developer
 
 cg_drawfps //show fps
+
 cg_fov //fov
+
 fx_enable //toggle game fx
 
 cg_draw2D //hides fps
+
 cg_drawHUD //Hides hud
 
 r_znear //map rendering
+
 r_lodscale // map quality
 
 sm_enable //shadow sharpness
+
 notarget //Ignored by ai
+
 give ammo //gives ammo
+
 give all//gives all weapons
+
 demigod //Godmode with flinch
+
 cg_shellshock //Shell shock for duration
+
 give allammo //gives all ammo
+
 ammoCounterHide //show weapon ammo
+
 give weapons //Gives levels weapons
+
 take weapons //takes all weapons
+
 togglesilencer //equips silencer for valid weapons
 
 devmap //loads map
+
 //map names
-  whites_estate
-  siena_rooftops
-  operahouse
-  sink_hole
-  shantytown
-  constructionsite
-  sciencecenter_a
-  sciencecenter_b
-  airport
-  MontenegroTrain
-  Casino
-  casino_poison
-  barge
-  gettler
-  eco_hotel
-  haines_estate
-  focus_test_map
+whites_estate
+siena_rooftops
+operahouse
+sink_hole
+shantytown
+constructionsite
+sciencecenter_a
+sciencecenter_b
+airport
+MontenegroTrain
+Casino
+casino_poison
+barge
+gettler
+eco_hotel
+haines_estate
+focus_test_map
 
 debug_reflection //dev sphere
 
 r_displaycontrast //screen brightness
+
 r_displaybrightness //screen saturation
+
 r_colorMap //scene color map
+
 r_specularMap //light impact intensity
+
 r_debugShader //debug surfaces
+
 r_showFbColorDebug //Debug Shader
+
 r_drawEntities //Show active models
+
 r_drawBModels //show background models
+
 r_drawSModels //show surface models
+
 r_drawXModels //Show skybox
+
 r_drawWorld // show map
+
 r_singleCell //distance lighting impact?
 
 aim_input_graph_debug //prints viewpos to minicon
@@ -676,41 +678,43 @@ r_specularMap //chrome map
 
 G_Ai //freeze ai
 
-ai_disableSpawn //toggle ai spawn  </blockquote>
+ai_disableSpawn //toggle ai spawn</code></pre>
+	</div>
+<!-- Dvar List -->
       
-    <table>
-      <thead>
-      <tr>
-      <th class="alsosoul">Contributions</th>
-      </tr>
-      </thead>
-      <tbody>
-      <tr>
-      <td>MrReekoFTWxD</td>
-      </tr>
-      <tr>
-      <td>𝓼𝓸𝓾𝓵</td>
-      </tr>
-      </tbody>
-      </table>
+	<table>
+		<thead>
+			<tr>
+				<th class="alsosoul">Contributions</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>MrReekoFTWxD</td>
+			</tr>
+			<tr>
+				<td>Soul</td>
+			</tr>
+		</tbody>
+	</table>
+	  
 <script>
-var coll = document.getElementsByClassName("codeheader");
-var i;
+	var coll = document.getElementsByClassName("codeheader");
+	var i;
 
-for (i = 0; i < coll.length; i++) {
-  coll[i].addEventListener("click", function() {
-    this.classList.toggle("active");
-    var content = this.nextElementSibling;
-    if (content.style.maxHeight){
-      content.style.maxHeight = null;
-	  content.style.padding = "0px";
-    } else {
-      content.style.maxHeight = content.scrollHeight + "px";
-	  content.style.padding = "15px 15px 15px 15px";
-    } 
-  });
-}
-</script>
+	for (i = 0; i < coll.length; i++) {
+	 coll[i].addEventListener("click", function() {
+	   this.classList.toggle("active");
+	   var content = this.nextElementSibling;
+	   if (content.style.maxHeight){
+	     content.style.maxHeight = null;
+	     content.style.padding = "0px";
+	   } else {
+	     content.style.maxHeight = content.scrollHeight + "px";
+	     content.style.padding = "15px 15px 15px 15px";
+	   } 
+	 });
+	}
+	</script>
 </body>
 </html>
-      
