@@ -113,7 +113,7 @@
 	<table>
 		<thead>
 			<tr>
-				<th class="alsosoul">This Singular Super Majestic Hook</th>
+				<th class="alsosoul">Hook Functions</th>
 			</tr>
 		</thead>
 	</table>
@@ -121,6 +121,11 @@
 		<div class="item1">Menu_PaintAll</div>
 		<div class="item2">0x822D90C8</div>  
 		<div class="item3">UiContext* dc, menuDef* menu</div>
+	</div>
+	<div class="grid-container">
+		<div class="item1">R_RenderScene</div>
+		<div class="item2">0x821AED80</div>  
+		<div class="item3">refdef_t* refdef, int r4 //Not fully sure what this arg for</div>
 	</div>
 <!-- Hooks -->
 
@@ -148,9 +153,19 @@
 		<div class="item3">Struct Size: 0x1EC</div>
 	</div>
 	<div class="grid-container">
+		<div class="item1">gentity_s</div>
+		<div class="item2">0x82B5CC58</div>  
+		<div class="item3">Struct Size: 0x0298</div>
+	</div>
+	<div class="grid-container">
 		<div class="item1">cg_t</div>
 		<div class="item2">0x82770180</div>  
 		<div class="item3">Struct Size: 0x534A8</div>
+	</div>
+	<div class="grid-container">
+		<div class="item1">clientActive_t</div>
+		<div class="item2">0x82809AD8</div>  
+		<div class="item3">Struct Size: 0x9B70</div>
 	</div>
 <!-- Structure Pointers -->
   
@@ -161,70 +176,124 @@
 			</tr>
 		</thead>
 	</table>
+
+<!-- dvar_s -->
+<div class="codeheader" id="codeheader_css">
+	dvar_s
+</div>
+<div id="codebox">
+	<pre><code data-language="css">struct DvarValueStringBuf
+{
+	const char *pad;
+	char string[12];
+}; 
+
+union DvarValue
+{
+	bool enabled;
+	int integer;
+	unsigned int unsignedInt;
+	float value;
+	float vector[4];
+	const char *string;
+	DvarValueStringBuf stringBuf;
+	char color[4];
+};
+
+union DvarLimits
+{
+	struct enumeration
+	{
+		int stringCount;
+		const char **strings;
+	};
+	struct integer
+	{
+		int min;
+		int max;
+	}; 
+	struct value
+	{
+		float min;
+		float max;
+	};
+	struct vector
+	{
+		float min;
+		float max;
+	};
+};
+
+struct dvar_s
+{
+	const char *name;
+	const char *description;
+	unsigned __int16 flags;
+	char type;
+	bool modified;
+	DvarValue current;
+	DvarValue latched;
+	DvarValue reset;
+	DvarLimits domain;
+	dvar_s *next;
+	dvar_s *hashNext;
+};
+		</code></code></pre>
+</div>
+<!-- Rendering Structs -->
   
 <!-- Rendering Structs -->
 	<div class="codeheader" id="codeheader_css">
 		Rendering Structs
 	</div>
 	<div id="codebox">
-		<pre><code data-language="css"><span class="hljs-keyword">struct</span> <span class="hljs-title">Material</span></code>
-    {
-        <span class="hljs-keyword">const</span> <span class="hljs-keyword">char</span>* name;
-    }
-    <span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">Font</span></span>
-    {
-        <span class="hljs-keyword">const</span> <span class="hljs-keyword">char</span>* name;
-        <span class="hljs-keyword">int</span> pixelHeight;
-    };</pre>
+		<pre><code data-language="css">struct Material
+{
+	const char* name;
+}; 
+struct Font
+{
+	const char* name;
+	int pixelHeight;
+};
+struct ScreenPlacement
+{
+	float scaleVirtualToReal[2];
+	float scaleVirtualToFull[2];
+	float scaleRealToVirtual[2];
+	float virtualScreenOffsetX;
+	float virtualViewableMin[2];
+	float virtualViewableMax[2];
+	float realViewportSize[2];
+	float realViewableMin[2];
+	float realViewableMax[2];
+	float subScreenLeft;
+};
+			</code></code></pre>
 	</div>
 <!-- Rendering Structs -->
-
-<!-- Compass Structs -->
-	<div class="codeheader" id="codeheader_css">
-		Compass Structs
-	</div>
-	<div id="codebox">
-		<pre><code data-language="css"><span class="hljs-keyword">enum</span> <span class="hljs-title">CompassType</span></code>
-		{
-        <span class="hljs-keyword">COMPASS_TYPE_PARTIAL,</span>
-        <span class="hljs-keyword">COMPASS_TYPE_FULL,</span>
-    };
-    <code class="lang-cpp"><span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">rectDef_s</span></span>
-      {
-        <span class="hljs-keyword">float</span> x, y, w, h;
-        <span class="hljs-keyword">int</span> horzAlign, vertAlign;
-    };</code></pre>
-	</div>
-<!-- Compass Structs -->
   
 <!-- UiContext -->
 	<div class="codeheader" id="codeheader_css">
 		UiContext
 	</div>
 	<div id="codebox">
-		<pre><code data-language="css"><span class="hljs-keyword">enum</span> UIContextIndex_t : DWORD
-      {
-        <span class="hljs-keyword">INVALID_UI_CONTEXT = 0xFFFFFFFF,</span>
-        <span class="hljs-keyword">UI_CONTEXT_FRONTEND = 0x0,</span>
-        <span class="hljs-keyword">UI_CONTEXT_INDEX_0 = 0x0,</span>
-        <span class="hljs-keyword">UI_CONTEXT_COUNT = 0x1,</span>
-    };
-    <code class="lang-cpp"><span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">UiContext</span></span>
-      {
-        <span class="hljs-keyword">UIContextIndex_t</span> contextIndex; //0x0000 
-        <span class="hljs-keyword">float</span> bias; //0x0004 
-        <span class="hljs-keyword">int</span> realTime; //0x0008 
-        <span class="hljs-keyword">int</span> frameTime; //0x000C 
-        <span class="hljs-keyword">float</span> cursorX; //0x0010 
-        <span class="hljs-keyword">float</span> cursorY; //0x0014
-        <span class="hljs-keyword">int</span> isCursorVisible; //0x0018 
-        <span class="hljs-keyword">int</span> screenWidth; //0x001C 
-        <span class="hljs-keyword">int</span> screenHeight; //0x0020 
-        <span class="hljs-keyword">float</span> screenAspect; //0x0024 
-        <span class="hljs-keyword">float</span> FPS; //0x0028 
-        <span class="hljs-keyword">float</span> blurRadiusOut; //0x002C 
-
-    };</code></code></pre>
+		<pre><code data-language="css">struct UiContext
+{
+	int contextIndex; //0x0000
+	float bias; //0x0004
+	int realTime; //0x0008
+	int frameTime; //0x000C
+	float cursorX; //0x0010
+	float cursorY; //0x0014
+	int isCursorVisible; //0x0018
+	int screenWidth; //0x001C
+	int screenHeight; //0x0020
+	float screenAspect; //0x0024
+	float FPS; //0x0028
+	float blurRadiusOut; //0x002C
+}; //Size: 0x30
+			</code></code></pre>
 	</div>
 <!-- UiContext -->
 
@@ -233,25 +302,99 @@
 		cg_t
 	</div>
 	<div id="codebox">
-		<pre><code data-language="css"><span class="hljs-keyword">struct</span> <span class="hljs-title">refdef_t</span></code>
-      {
-        <span class="hljs-keyword">int</span> x; //0x0000 
-        <span class="hljs-keyword">int</span> y; //0x0004 
-        <span class="hljs-keyword">int</span> width; //0x0008 
-        <span class="hljs-keyword">int</span> height; //0x000C 
-        <span class="hljs-keyword">float</span> tanHalfFovX; //0x0010 
-        <span class="hljs-keyword">float</span> tanHalfFovY; //0x0014
-        <span class="hljs-keyword">char</span> _0x18[0x30]; //0x0018 
-    <span class="hljs-keyword">vec3_t</span> eyePosOld; //0x0048 
-        <span class="hljs-keyword">vec3_t</span> eyePos; //0x0054 
-        <span class="hljs-keyword">vec3_t</span> viewAxis[3]; //0x0060 
-    };
+		<pre><code data-language="css">struct playerState_s
+{
+	int commandTime; //0x0000
+	int pm_type; //0x0004
+	int bobCycle; //0x0008
+	int pm_flags; //0x000C
+	int weapFlags; //0x0010
+	int otherFlags; //0x0014
+	char pad_0018[8]; //0x0018
+	vec3_t origin; //0x0020
+	vec3_t velocity; //0x002C
+	vec3_t oldVelocity; //0x0038
+	char pad_0044[36]; //0x0044
+	int gravity; //0x0068
+	float leanf; //0x006C
+	int speed; //0x0070
+	vec3_t delta_angles; //0x0074
+	int groundEntityNum; //0x0080
+	char pad_0084[4]; //0x0084
+	int jumpTime; //0x0088
+	float jumpOriginZ; //0x008C
+	int legsTimer; //0x0090
+	int legsAnim; //0x0094
+	int torsoTimer; //0x0098
+	int torsoAnim; //0x009C
+	int legsAnimDuration; //0x00A0
+	int torsoAnimDuration; //0x00A4
+	char pad_00A8[60]; //0x00A8
+	int weapon; //0x00E4
+	char pad_00E8[8]; //0x00E8
+	int weapon2; //0x00F0
+	char pad_00F4[8]; //0x00F4
+	float adsScale; //0x00FC
+	char pad_0100[28]; //0x0100
+	vec3_t viewangles; //0x011C
+	int viewHeightTarget; //0x0128
+	float viewHeightCurrent; //0x012C
+	char pad_0130[60]; //0x0130
+	int stats[4]; //0x016C
+}; //Size: 0x17C
+		
+struct snapShot_t
+{
+	char pad_0000[4]; //0x0000
+	int serverTime; //0x0004
+	class playerState_s ps; //0x0008
+}; //Size: 0x184
+		
+struct refdef_t
+{
+	int x; //0x0000
+	int y; //0x0004
+ 	int width; //0x0008
+	int height; //0x000C
+	float tanHalfFovX; //0x0010 
+	float tanHalfFovY; //0x0014
+	char _0x18[0x30];
+	vec3_t eyePosOld; //0x0048
+	vec3_t eyePos; //0x0054
+	vec3_t viewAxis[3]; //0x0060
+};
 
-    <span class="hljs-keyword">struct</span> <span class="hljs-keyword">cg_t</span>
-    {
-      <span class="hljs-keyword">char</span> _0x00[0x1E34C]; //0x0000 
-      <span class="hljs-keyword">refdef_t</span> refdef; //0x1E34C 
-    };</pre>
+struct rectDef_s
+{
+	float x, y, w, h;
+	int horzAlign, vertAlign;
+};
+
+struct cg_t
+{
+	int clientNum; //0x0000
+	int localClientNum; //0x0004
+	char pad_0008[12]; //0x0008
+	int cubemapSize; //0x0014
+	int latestSnapshotNum; //0x0018
+	int latestSnapshotTime; //0x001C
+	int renderScreen; //0x0020
+	struct snapShot_t *snap; //0x0024
+	struct snapShot_t *nextSnap; //0x0028
+	char pad_002C[8]; //0x002C
+	struct playerState_s ps; //0x0034
+	char pad_01B0[2280]; //0x01B0
+	float spreadScale; //0x0A98
+	char pad_0A9C[0x1D8B0]; //0x0A9C
+	struct refdef_t refdef;
+	char pad_0x1D934[0x4904];
+	float compassNorthYaw; //0x22238
+	vec2_t compassNorth; //0x2223C
+	Material* compassMapMaterial; //0x22244
+	vec2_t compassMapUpperLeft; //0x22248
+	vec2_t compassMapWorldSize; //0x2224C
+}; //Size: 0x11C4
+  </code></pre>
 	</div>
 <!-- cg_t -->
 
@@ -260,38 +403,34 @@
 		centity_t
 	</div>
 	<div id="codebox">
-		<pre><code data-language="css">class cpose_t
+		<pre><code data-language="css">struct cpose_t
 {
-public:
-    short lightingHandle; //0x0000
-    __int8 eType; //0x0002
-    __int8 eTypeUnion; //0x0003
-    char pad_0004[4]; //0x0004
-    vec3_t origin; //0x0008
-    vec3_t angles; //0x0014
-    char pad_0020[4]; //0x0020
+	short lightingHandle; //0x0000
+	__int8 eType; //0x0002
+	__int8 eTypeUnion; //0x0003
+	char pad_0004[4]; //0x0004
+	vec3_t origin; //0x0008
+	vec3_t angles; //0x0014
+	char pad_0020[4]; //0x0020
 }; //Size: 0x0024
 
-class trajectory_t
+struct trajectory_t
 {
-public:
-    int trType; //0x0000
-    char pad_0004[8]; //0x0004
-    vec3_t trBase; //0x000C
-    vec3_t trDelta; //0x0018
+	int trType; //0x0000
+	char pad_0004[8]; //0x0004
+	vec3_t trBase; //0x000C
+	vec3_t trDelta; //0x0018
 }; //Size: 0x0024
 
-class LerpEntityState
+struct LerpEntityState
 {
-public:
     int eFlags; //0x0000
-    class trajectory_t pos; //0x0004
+    struct trajectory_t pos; //0x0004
     char pad_0028[76]; //0x0028
 }; //Size: 0x0074
 
-class centity_t
+struct centity_t
 {
-public:
     class cpose_t pose;
     char pad_0024[64]; //0x0024
     class LerpEntityState N00000060; //0x0064
@@ -301,20 +440,85 @@ public:
     int trueCheck; //0x01C0 // & 0x1000000
     char pad_01C4[36]; //0x01C4
     int trueCheck2; //0x01E8 // & 0x1000000
-
-
 }; //Size: 0x01EC</code></pre>
 	</div>
 <!-- centity_t -->
 
+<!-- gentity_s -->
+<div class="codeheader" id="codeheader_css">
+	gentity_s
+</div>
+<div id="codebox">
+	<pre><code data-language="css">struct gentity_s
+{
+	char pad_0000[24]; //0x0000
+	vec3_t origin; //0x0018
+	char pad_0024[344]; //0x0024
+	int health; //0x017C
+	int maxHealth; //0x0180
+	char pad_0184[276]; //0x0184
+}; //Size: 0x0298
+		</code></code></pre>
+</div>
+<!-- gentity_s -->
+
+<!-- clientActive_t -->
+<div class="codeheader" id="codeheader_css">
+	clientActive_t
+</div>
+<div id="codebox">
+	<pre><code data-language="css">struct clientActive_t
+{
+	char pad_0000[48]; //0x0000
+	int isNotAds; //0x0030
+	char pad_0034[12]; //0x0034
+	vec3_t origin; //0x0040
+	char pad_004C[72]; //0x004C
+	vec3_t delta_angles; //0x0094
+	char pad_00A0[156]; //0x00A0
+	vec3_t viewAngles; //0x013C
+	char pad_0148[80]; //0x0148
+}; //Size: 0x9B70
+		</code></code></pre>
+</div>
+<!-- clientActive_t -->
+
+<!-- trace_t -->
+<div class="codeheader" id="codeheader_css">
+	trace_t
+</div>
+<div id="codebox">
+	<pre><code data-language="css">struct trace_t
+{
+	float fraction;
+	float normal[3];
+	int surfaceFlags;
+	int contents;
+	const char *material;
+	char* hitType;
+	unsigned __int16 hitId;
+	unsigned __int16 modelIndex;
+	unsigned __int16 partName;
+	unsigned __int16 partGroup;
+	bool allsolid;
+	bool startsolid;
+	bool walkable;
+}; 
+		</code></code></pre>
+</div>
+<!-- trace_t -->
+
 <!-- How I filled the structs -->
 	<div class="codeheader" id="codeheader_css">
-		How I filled the structs
+		Fill Structs
 	</div>
 	<div id="codebox">
-		<pre><code data-language="css">UiContext = (UiContext*)0x83725CD0;
-      cg_t* cg = (cg_t*)0x82770180;
-      centity_t* cg_entitiesArray = (centity_t*)0x82673F80;</code></pre>
+	<pre><code data-language="css">ScrPlace = (ScreenPlacement*)0x828A1708;
+cgDC = (UiContext*)0x83725CD0;
+cg = (cg_t*)0x82770180;
+cg_entityArray = (centity_s*)0x82673F80;
+client = (clientActive_t*)0x82809AD8;
+gentity = (gentity_s*)0x82B5CC58;</code></pre>
 	</div>
 <!-- How I filled the structs -->
   
