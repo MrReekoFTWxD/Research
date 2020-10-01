@@ -9,157 +9,157 @@
 	<h1 class="soul" style="text-align: center; font-weight: bold;">James Bond 007 Quantum of Solace</h1>
 	<h1 class="soul" style="font-size: larger; text-align: center;">TitleID - 415607FF</h1>
 
+<!-- Rendering Functions -->
 	<table>
 		<thead>
 			<tr>
 				<th class="alsosoul">Rendering Functions</th>
-				<th class="alsosoul">Offsets</th>
-				<th class="alsosoul">Args</th>
 			</tr>
 		</thead>
-		<tbody>
-			<tr>
-				<td>R_AddCmdDrawPic</td>
-				<td>0x821AEDC0</td>
-				<td>float x, float y, float w, float h, float s0, float t0, float s1, float t1, const float* color, Material* material</td>
-			</tr>
-			<tr>
-				<td>R_AddCmdDrawStretchPicRotateXY</td>
-				<td>0x82570F40</td>
-				<td>float x, float y, float w, float h, float s0, float t0, float s1, float t1, float angle, const float *color, Material *material</td>
-			</tr>
-			<tr>
-				<td>R_AddCmdDrawStretchPicFlipST</td>
-				<td>0x82570DA8</td>
-				<td>float x, float y, float w, float h, float s0, float t0, float s1, float t1, const float* color, Material* material</td>
-			</tr>
-			<tr>
-				<td>Material_RegisterHandle</td>
-				<td>0x82565398</td>
-				<td>const char* name, int img</td>
-			</tr>
-			<tr>
-				<td>R_RegisterFont</td>
-				<td>0x821BD4F0</td>
-				<td>const char* name, int img</td>
-			</tr>
-			<tr>
-				<td>R_AddCmdDrawText</td>
-				<td>0x82572438</td>
-				<td>const char *text, int maxChars, Font *font, float x, float y, float xScale, float yScale, float rotation, const float *color, int style</td>
-			</tr>
-			<tr>
-				<td>R_TextWidth</td>
-				<td>0x82564C58</td>
-				<td>const char* text, int maxchar, Font* font</td>
-			</tr>
-			<tr>
-				<td>R_TextHeight</td>
-				<td>0x82564D48</td>
-				<td>Font *font</td>
-			</tr>
-		</tbody>
 	</table>
+	<div class="grid-container">
+		<div class="item1">R_AddCmdDrawPic //Unstable</div>
+		<div class="item2">0x821AEDC0</div>  
+		<div class="item3">float x, float y, float w, float h, float s0, float t0, float s1, float t1, const float* color, Material* material</div>
+	</div>
+	<div class="grid-container">
+		<div class="item1">R_AddCmdDrawStretchPicRotateXY</div>
+		<div class="item2">0x82570F40</div>  
+		<div class="item3">float x, float y, float w, float h, float s0, float t0, float s1, float t1, float angle, const float *color, Material *material</div>
+	</div>
+	<div class="grid-container">
+		<div class="item1">R_AddCmdDrawStretchPicFlipST</div>
+		<div class="item2">0x82570DA8</div>  
+		<div class="item3">float x, float y, float w, float h, float s0, float t0, float s1, float t1, const float* color, Material* material</div>
+	</div>
+	<div class="grid-container">
+		<div class="item1">Material_RegisterHandle</div>
+		<div class="item2">0x82565398</div>  
+		<div class="item3">const char* name, int img</div>
+	</div>
+	<div class="grid-container">
+		<div class="item1">R_RegisterFont</div>
+		<div class="item2">0x821BD4F0</div>  
+		<div class="item3">const char* name, int img</div>
+	</div>
+	<div class="grid-container">
+		<div class="item1">R_AddCmdDrawText</div>
+		<div class="item2">0x82572438</div>  
+		<div class="item3">const char *text, int maxChars, Font *font, float x, float y, float xScale, float yScale, float rotation, const float *color, int style</div>
+	</div>
+	<div class="grid-container">
+		<div class="item1">R_TextWidth</div>
+		<div class="item2">0x82564C58</div>  
+		<div class="item3">const char* text, int maxchar, Font* font</div>
+	</div>
+	<div class="grid-container">
+		<div class="item1">R_TextHeight</div>
+		<div class="item2">0x82564D48</div>  
+		<div class="item3">Font *font</div>
+	</div>
+<!-- Rendering Functions -->
  
+<!-- Random Functions -->
 	<table>
 		<thead>
 			<tr>
 				<th class="alsosoul">Random Functions</th>
-				<th class="alsosoul">Offsets</th>
-				<th class="alsosoul">Args</th>
 			</tr>
 		</thead>
-		<tbody>
-			<tr>
-				<td>Cbuf_AddText</td>
-				<td>0x82298750</td>
-				<td>int local, char* cmd</td>
-			</tr>
-			<tr>
-				<td>CG_GameMessage</td>
-				<td>0x82180200</td>
-				<td>char* text</td>
-			</tr>
-			<tr>
-				<td>SV_GameSendServerCommand</td>
-				<td>0x822C1F50</td>
-				<td>int clientIndex, int type, char* cmd</td>
-			</tr>
-			<tr>
-				<td>SL_GetString</td>
-				<td>0x822AF3B0</td>
-				<td>const char* str, int localController</td>
-			</tr>
-			<tr>
-				<td>AimTarget_GetTagPos</td>
-				<td>0x821261D0</td>
-				<td>int local, centity_t const* cen, unsigned int, vec3_t &amp;out</td>
-			</tr>
-			<tr>
-				<td>CG_CompassDrawPlayerMap</td>
-				<td>0x8216D060</td>
-				<td>int localClientNum, CompassType compassType, rectDef_s *parentRect, rectDef_s *rect, Material *material, const float *color</td>
-			</tr>
-			<tr>
-				<td>CG_CompassDrawPlayer</td>
-				<td>0x8216D568</td>
-				<td>int localClientNum, CompassType compassType, rectDef_s *parentRect, rectDef_s *rect, Material *material, const float *color &#8193&#8193&#8193&#8193&#8193&#8193</td>
-			</tr>
-			<tr>
-				<td>va</td>
-				<td>0x822EBA78</td>
-				<td>const char* fmt, ...</td>
-			</tr>
-		</tbody>
 	</table>
+	<div class="grid-container">
+		<div class="item1">Cbuf_AddText</div>
+		<div class="item2">0x82298750</div>  
+		<div class="item3">int local, char* cmd</div>
+	</div>
+	<div class="grid-container">
+		<div class="item1">CG_GameMessage</div>
+		<div class="item2">0x82180200</div>  
+		<div class="item3">char* text</div>
+	</div>
+	<div class="grid-container">
+		<div class="item1">SV_GameSendServerCommand</div>
+		<div class="item2">0x822C1F50</div>  
+		<div class="item3">int clientIndex, int type, char* cmd</div>
+	</div>
+	<div class="grid-container">
+		<div class="item1">SL_GetString</div>
+		<div class="item2">0x822AF3B0</div>  
+		<div class="item3">const char* str, int localController</div>
+	</div>
+	<div class="grid-container">
+		<div class="item1">AimTarget_GetTagPos</div>
+		<div class="item2">0x821261D0</div>  
+		<div class="item3">int local, centity_t const* cen, unsigned int, vec3_t &amp;out</div>
+	</div>
+	<div class="grid-container">
+		<div class="item1">CG_CompassDrawPlayerMap</div>
+		<div class="item2">0x8216D060</div>  
+		<div class="item3">int localClientNum, CompassType compassType, rectDef_s *parentRect, rectDef_s *rect, Material *material, const float *color</div>
+	</div>
+	<div class="grid-container">
+		<div class="item1">CG_CompassDrawPlayer</div>
+		<div class="item2">0x8216D568</div>  
+		<div class="item3">int localClientNum, CompassType compassType, rectDef_s *parentRect, rectDef_s *rect, Material *material, const float *color</div>
+	</div>
+	<div class="grid-container">
+		<div class="item1">va</div>
+		<div class="item2">0x822EBA78</div>  
+		<div class="item3">const char* fmt, ...</div>
+	</div>
+<!-- Random Functions -->
+
+<!-- Hooks -->
+	<table>
+		<thead>
+			<tr>
+				<th class="alsosoul">This Singular Super Majestic Hook</th>
+			</tr>
+		</thead>
+	</table>
+  	<div class="grid-container">
+		<div class="item1">Menu_PaintAll</div>
+		<div class="item2">0x822D90C8</div>  
+		<div class="item3">UiContext* dc, menuDef* menu</div>
+	</div>
+<!-- Hooks -->
+
+<!-- Structure Pointers -->
+	<table>
+		<thead>
+			<tr>
+				<th class="alsosoul">Structure Pointers</th>
+			</tr>
+		</thead>
+	</table>
+	<div class="grid-container">
+		<div class="item1">UiContext</div>
+		<div class="item2">0x83725CD0</div>  
+		<div class="item3">Struct Size: 0x6E5C</div>
+	</div>
+	<div class="grid-container">
+		<div class="item1">ScrPlace</div>
+		<div class="item2">0x828A1708</div>  
+		<div class="item3">Struct Size: 0xBC</div>
+	</div>
+	<div class="grid-container">
+		<div class="item1">cg_entityArray</div>
+		<div class="item2">0x82673F80</div>  
+		<div class="item3">Struct Size: 0x1EC</div>
+	</div>
+	<div class="grid-container">
+		<div class="item1">cg_t</div>
+		<div class="item2">0x82770180</div>  
+		<div class="item3">Struct Size: 0x534A8</div>
+	</div>
+<!-- Structure Pointers -->
   
 	<table>
 		<thead>
 			<tr>
-				<th class="alsosoul">Hook</th>
-				<th class="alsosoul">Offsets</th>
-				<th class="alsosoul">Args</th>
+				<th class="alsosoul">Structures And Misc</th>
 			</tr>
 		</thead>
-		<tbody>
-			<tr>
-				<td>Menu_PaintAll</td>
-				<td>0x822D90C8</td>
-				<td>UiContext* dc, menuDef* menu &#8193&#8193&#8193&#8193&#8193&#8193&#8193&#8193&#8193&#8193&#8193&#8193&#8193&#8193&#8193&#8193&#8193&#8193&#8193&#8193&#8193&#8193&#8193&#8193&#8193&#8193&#8193&#8193&#8193</td>
-			</tr>
-		</tbody>
-	</table>
-
-	<table>
-		<thead>
-			<tr>
-				<th class="alsosoul">Pointer</th>
-				<th class="alsosoul">Offsets</th>
-				<th class="alsosoul">Size</th>
-			</tr>
-		</thead>
-		<tbody>
-			<tr>
-				<td>UiContext</td>
-				<td>0x83725CD0</td>
-				<td>0x6E5C</td>
-			</tr>
-			<tr>
-				<td>ScrPlace</td>
-				<td>0x828A1708</td>
-				<td>0xBC</td>
-			</tr>
-			<tr>
-				<td>cg_entityArray</td>
-				<td>0x82673F80</td>
-				<td>0x1EC</td>
-			</tr>
-			<tr>
-				<td>cg_t</td>
-				<td>0x82770180</td>
-				<td>0x534A8 &#8193&#8193&#8193&#8193&#8193&#8193&#8193&#8193&#8193&#8193&#8193&#8193&#8193&#8193&#8193&#8193&#8193&#8193&#8193&#8193&#8193&#8193&#8193&#8193&#8193&#8193&#8193&#8193&#8193&#8193&#8193&#8193&#8193&#8193&#8193&#8193&#8193&#8193&#8193&#8193&#8193&#8193</td>
-			</tr>
-		</tbody>
 	</table>
   
 <!-- Rendering Structs -->
@@ -718,3 +718,4 @@ ai_disableSpawn //toggle ai spawn</code></pre>
 	</script>
 </body>
 </html>
+      
